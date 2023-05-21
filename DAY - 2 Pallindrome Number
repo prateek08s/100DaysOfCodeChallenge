@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class DAY2 {
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        int num = sc.nextInt();
+        DAY2 obj = new DAY2();
+        boolean isPalindrome = obj.isPalindrome(num);
+        System.out.println("Palindrome: " + isPalindrome);
+    }
+
+    static boolean isPalindrome(int x) {
+        int temp = x;
+        int rev = 0;
+        while (x > 0) {
+            int rem = x % 10;
+            rev = rev * 10 + rem;
+            x = x / 10;
+        }
+        if (temp == rev) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
