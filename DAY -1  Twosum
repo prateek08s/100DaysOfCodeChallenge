@@ -1,1 +1,36 @@
+import java.util.*;
+
+public class Solution
+ {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the value of n");
+        int n = sc.nextInt();
+        // Initializing the array
+        int[] nums = new int[n];
+
+        // taking the input from the user
+        System.out.println("Enter the array elements");
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        System.out.println("Enter the TARGET ELEMENT");
+        int target = sc.nextInt();
+
+        Solution obj = new Solution();
+        obj.findTwoSum(nums, target);
+    }
+
+    void findTwoSum(int[] nums, int target) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    System.out.println("[" + i + "," + j + "]");
+                }
+            }
+        }
+    }
+}
 
