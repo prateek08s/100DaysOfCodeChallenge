@@ -12,7 +12,7 @@ public class DAY2 {
     }
 
     static boolean isPalindrome(int x) {
-        int temp = x;
+        int temp = x; // Copy of the variable x
         int rev = 0;
         while (x > 0) {
             int rem = x % 10;
