@@ -1,0 +1,23 @@
+class Solution {
+    public int searchInsert(int[] arr, int t) {
+        int left = 0;
+        int right = arr.length - 1;
+        int index = arr.length; // Initialize with length of array
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (arr[mid] == t) {
+                index = mid;
+                break;
+            } else if (arr[mid] < t) {
+                left = mid + 1;
+            } else {
+                index = mid; // Update index to store the position of the element
+                right = mid - 1;
+            }
+        }
+
+        return index;
+    }
+}
